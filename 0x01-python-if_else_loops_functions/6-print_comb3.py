@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-for i in range(0, 99):
-    if i % 10 != i / 10 and i % 10 > i / 10:
-        print("{:02d}".format(i), end='')
-        if (i / 10 < 8):
-            print(", ", end="")
-print()
+for n in range(0, 99):
+    if n % 10 > n / 10:
+        if n != 89:
+            print("{:02d}, ".format(n), end='')
+        else:
+            print("{:02d}".format(n))
