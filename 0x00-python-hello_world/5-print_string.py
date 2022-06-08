@@ -2,4 +2,4 @@
 str = "Holberton School"
 # YOUR CODE GOES HERE. PLEASE REMOVE THIS LINE
 print(3 * str)
-print(str[:10])
+print(str[:9])
