@@ -23,9 +23,7 @@ int check_cycle(listint_t *list)
 		fHead = fHead->next->next;
 
 		if (sHead == fHead)
-		{
 			return (1);
-		}
 	}
 
 	return (0);
