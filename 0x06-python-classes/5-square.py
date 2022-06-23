@@ -38,8 +38,14 @@ class Square:
 
     def my_print(self):
         """prints in stdout the square with the character '#'"""
-        for i in range(self.size):
-            [print("#", end="") for i in range(self.size)]
-            print("")
-        if self.size == 0:
-            print("")
+        size = self.__size
+        for i in range(size):
+            for j in range(size):
+                """
+                print # if the value of
+                """
+                print("#", end="")
+            else:
+                """else print empty spaces"""
+                print(" ")
+        print()
