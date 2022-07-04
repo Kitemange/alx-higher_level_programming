@@ -1,25 +1,15 @@
 #!/usr/bin/python3
-"""
-This module is composed by a function prints a message
-"""
+"""String manipulations"""
 
 
 def say_my_name(first_name, last_name=""):
-    """ Function that prints "My name is <first name> <last name>"
-    Args:
-        first_name: first name
-        last_name: last name
-    Returns:
-        No return
-    Raises:
-        TypeError: If first_name or last_name is not a string
+    """Prints a string.
+    Validates string inputs, the display
+    the full name
+
     """
-
     if type(first_name) is not str:
-        raise TypeError("first_name must be a string")
-
+        raise TypeError("first name must be a string")
     if type(last_name) is not str:
-        raise TypeError("last_name must be a string")
-
+        raise TypeError("last name must be a string")
     print("My name is {} {}".format(first_name, last_name))
-    
