@@ -75,5 +75,4 @@ class Rectangle:
             string represenation of the object
         """
 
-        return "Rectangle({:d}, {:d})".format(self.width, self.height)
-   
+        return f'Rectangle({self.width}, {self.height})'
