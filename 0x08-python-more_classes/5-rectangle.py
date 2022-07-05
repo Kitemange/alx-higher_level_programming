@@ -70,10 +70,12 @@ class Rectangle:
         return ("".join(rectangle))
 
     def __repr__(self):
-        """Returns the string representation of the Rectangle."""
-        rectangle = "Rectangle(" + str(self.__width)
-        rectangle += ", " + str(self.__height) + ")"
-        return (rectangle)
+        """ Method that returns the string represantion of the instance
+        Returns:
+            string represenation of the object
+        """
+
+        return f'Rectangle({self.width}, {self.height})'
 
     def __del__(self):
         """Print a message for every deletion of
