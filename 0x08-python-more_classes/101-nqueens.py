@@ -1,92 +1,96 @@
-# Python3 program to solve N Queen
-# Problem using backtracking
-global N
-N = 4
+#!/usr/bin/python3
+"""
+This module contains an algorithm that resolves the N-Queen puzzle
+using backtracking
+"""
 
-def printSolution(board):
-  for i in range(N):
-    for j in range(N):
-      print (board[i][j], end = " ")
-    print()
 
-# A utility function to check if a queen can
-# be placed on board[row][col]. Note that this
-# function is called when "col" queens are
-# already placed in columns from 0 to col -1.
-# So we need to check only left side for
-# attacking queens
-def isSafe(board, row, col):
+def isSafe(m_queen, nqueen):
+    """ Method that determines if the queens can or can't kill each other
+    Args:
+        m_queen: array that has the queens positions
+        nqueen: queen number
+    Returns:
+        True: when queens can't kill each other
+        False: when some of the queens can kill
+    """
 
-  # Check this row on left side
-  for i in range(col):
-    if board[row][i] == 1:
-      return False
+    for i in range(nqueen):
 
-  # Check upper diagonal on left side
-  for i, j in zip(range(row, -1, -1),
-          range(col, -1, -1)):
-    if board[i][j] == 1:
-      return False
+        if m_queen[i] == m_queen[nqueen]:
+            return False
 
-  # Check lower diagonal on left side
-  for i, j in zip(range(row, N, 1),
-          range(col, -1, -1)):
-    if board[i][j] == 1:
-      return False
+        if abs(m_queen[i] - m_queen[nqueen]) == abs(i - nqueen):
+            return False
 
-  return True
-
-def solveNQUtil(board, col):
-  
-  # base case: If all queens are placed
-  # then return true
-  if col >= N:
     return True
 
-  # Consider this column and try placing
-  # this queen in all rows one by one
-  for i in range(N):
 
-    if isSafe(board, i, col):
-      
-      # Place this queen in board[i][col]
-      board[i][col] = 1
+def print_result(m_queen, nqueen):
+    """ Method that prints the list with the Queens positions
+    Args:
+        m_queen: array that has the queens positions
+        nqueen: queen number
+    """
 
-      # recur to place rest of the queens
-      if solveNQUtil(board, col + 1) == True:
-        return True
+    res = []
 
-      # If placing queen in board[i][col
-      # doesn't lead to a solution, then
-      # queen from board[i][col]
-      board[i][col] = 0
+    for i in range(nqueen):
+        res.append([i, m_queen[i]])
 
-  # if the queen can not be placed in any row in
-  # this column col then return false
-  return False
+    print(res)
 
-# This function solves the N Queen problem using
-# Backtracking. It mainly uses solveNQUtil() to
-# solve the problem. It returns false if queens
-# cannot be placed, otherwise return true and
-# placement of queens in the form of 1s.
-# note that there may be more than one
-# solutions, this function prints one of the
-# feasible solutions.
-def solveNQ():
-  board = [ [0, 0, 0, 0],
-      [0, 0, 0, 0],
-      [0, 0, 0, 0],
-      [0, 0, 0, 0] ]
 
-  if solveNQUtil(board, 0) == False:
-    print ("Solution does not exist")
-    return False
+def Queen(m_queen, nqueen):
+    """ Recursive function that executes the Backtracking algorithm
+    Args:
+        m_queen: array that has the queens positions
+        nqueen: queen number
+    """
 
-  printSolution(board)
-  return True
+    if nqueen is len(m_queen):
+        print_result(m_queen, nqueen)
+        return
 
-# Driver Code
-solveNQ()
+    m_queen[nqueen] = -1
 
-# This code is contributed by Divyanshu Mehta
+    while((m_queen[nqueen] < len(m_queen) - 1)):
+
+        m_queen[nqueen] += 1
+
+        if isSafe(m_queen, nqueen) is True:
+
+            if nqueen is not len(m_queen):
+                Queen(m_queen, nqueen + 1)
+
+
+def solveNQueen(size):
+    """ Function that invokes the Backtracking algorithm
+    Args:
+        size: size of the chessboard
+    """
+
+    m_queen = [-1 for i in range(size)]
+
+    Queen(m_queen, 0)
+
+
+if __name__ == '__main__':
+
+    import sys
+
+    if len(sys.argv) == 1 or len(sys.argv) > 2:
+        print("Usage: nqueens N")
+        sys.exit(1)
+
+    try:
+        size = int(sys.argv[1])
+    except Exception:
+        print("N must be a number")
+        sys.exit(1)
+
+    if size < 4:
+        print("N must be at least 4")
+        sys.exit(1)
+
+    solveNQueen(size)
