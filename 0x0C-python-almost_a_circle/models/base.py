@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base class."""
 
+
 class Base:
     """Represents the base class.
 
@@ -12,6 +13,7 @@ class Base:
     """
 
     __nb_objects = 0
+
     def __init__(self, id=None):
         """Instantiate the id class with.
 
