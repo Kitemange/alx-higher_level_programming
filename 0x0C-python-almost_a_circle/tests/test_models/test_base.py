@@ -11,7 +11,7 @@ class TestBase(unittest.TestCase):
         """Tests for a valid id"""
         b1 = Base()
         self.assertEqual(b1.id, 1)
-        
+
     def test_is_valid_string(self):
         """Testing fo string inputs"""
         b2 = Base("ALX")
@@ -20,5 +20,7 @@ class TestBase(unittest.TestCase):
     def test_is_valid_multiple(self):
         """Tests for valid multiple"""
         pass
+
+
 if __name__ == '__main__':
     unittest.main()
