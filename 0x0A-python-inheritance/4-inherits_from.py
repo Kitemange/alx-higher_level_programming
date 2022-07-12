@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""Only sub class of.
-Author: Kanneh
-
-"""
+"""Author: Bryan."""
 
 
 def inherits_from(obj, a_class):
@@ -16,6 +13,6 @@ def inherits_from(obj, a_class):
         a_class(type): describes the class
 
     """
-    if isinstance(type(obj), a_class) and type(obj) != a_class:
-        return True
-    return False
+    if type(obj) is a_class:
+        return False
+    return isinstance(obj, a_class)
