@@ -7,5 +7,5 @@ Author: Bryan Mutheke
 
 class BaseGeometry:
     """An empty class."""
-  
+
     pass
