@@ -4,11 +4,11 @@
 
 class MyInt(int):
     """A class that inherits from int"""
-
-    def __eq__(self, value):
+    
+    def __eq__(self, __x: object):
         """Not equating the operator"""
-        return self.real != value
-
-    def __ne__(self, value):
+        return super().__eq__(__x)
+    
+    def __ne__(self, __x: object):
         """Equating the operator"""
-        return self.real == value
+        return super().__ne__(__x)
