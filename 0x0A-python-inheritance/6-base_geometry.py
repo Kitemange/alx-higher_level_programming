@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-""" Improve Geometry.
-Author: Kanneh
+"""Geometry module.
 
+Author: Bryan Mutheke
 """
 
 
 class BaseGeometry:
-    """An empty class"""
+    """An empty class."""
 
     def area(self):
-        """Raises an exception because...
-        area is not implemented
+        """Raise an exception.
 
+        Raises:
+            Exception: uni,plemented area
         """
         raise Exception("area() is not implemented")
