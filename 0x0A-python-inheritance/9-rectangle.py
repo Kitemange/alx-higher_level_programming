@@ -21,3 +21,7 @@ class Rectangle(BaseGeometry):
     def area(self):
         """Area of the Rectangle"""
         return self.__width * self.__height
+    
+    def __str__(self) -> str:
+        """ Special method that returns the printable string """
+        return super().__str__()
