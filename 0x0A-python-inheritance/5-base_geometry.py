@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """Geometry module.
-Author: Kanneh
 
+Author: Bryan Mutheke
 """
 
 
 class BaseGeometry:
-    """An empty class"""
+    """An empty class."""
+    
     pass
