@@ -27,7 +27,7 @@ class Student:
                 if type(attr) != str:
                     return obj
             d_list = {}
-            
+
             for iatr in range(len(attrs)):
                 for satr in obj:
                     if attrs[iatr] == satr:
