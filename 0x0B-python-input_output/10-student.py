@@ -25,8 +25,6 @@ class Student:
         if type(attrs) is list:
             for attr in attrs:
                 if type(attr) != str:
-                    return
-                else:
                     return obj
             d_list = {}
             
