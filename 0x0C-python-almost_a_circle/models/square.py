@@ -13,8 +13,9 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        str_name = ("[Rectangle] ({}) {}/{} - {}/{}"\
-            .format(self.id, self.x, self.y, self.__width, self.__height))
+        str_name = ("[Rectangle] ({}) {}/{} - {}/{}"
+                    .format(self.id, self.x, self.y, self.__width,
+                            self.__height))
         return str_name
 
     @property
