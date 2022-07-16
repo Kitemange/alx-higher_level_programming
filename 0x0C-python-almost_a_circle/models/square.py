@@ -14,7 +14,7 @@ class Square(Rectangle):
 
     def __str__(self):
         str_name = ("[Rectangle] ({}) {}/{} - {}/{}"\
-            .format(self.id, self.x,self.y,self.__width,self.__height))
+            .format(self.id, self.x, self.y, self.__width, self.__height))
         return str_name
 
     @property
@@ -33,7 +33,7 @@ class Square(Rectangle):
         str_res = ("[Square] ({}) {}/{} - {}"
                    .format(self.id, self.x, self.y, self.width))
         return str_res
-    
+
     def update(self, *args, **kwargs):
         """Updates the public class
         Args:
