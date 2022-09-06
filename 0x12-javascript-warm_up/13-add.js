@@ -3,4 +3,6 @@
 function add (a, b) {
   return (a + b);
 }
-export const add = add;
+module.exports = {
+  add: add
+};
