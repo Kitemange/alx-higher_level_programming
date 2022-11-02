@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     import sys
+    #import functions from calculator_1
     from calculator_1 import add, sub, mul, div
     narg = len(sys.argv) - 1
     if narg != 3:
